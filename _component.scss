@@ -1,0 +1,159 @@
+.logo{
+    @include flexlayout;
+    font-size: 70px;
+    color: $color-praimary;
+    width: 110px;
+    height: 110px;
+    border: 3px solid $color-praimary;
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: all .4s;
+    padding: 2px;
+    &:hover{
+        background-color: white;
+        border: 3px solid transparent;
+        transform: rotate(360deg);
+        box-shadow: 3px 5px 40px $color-praimary;
+    }
+}
+
+.main-name{
+    font-family: $font-sahel;
+    font-size: 50px;
+    color: $color-secondry;
+    @include textStyles;
+}
+.hamberger-mnue{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    z-index: 300;
+    transition: transform 0.5s;
+
+    .mnue{
+        @extend %fullspace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: transform 0.5s;
+        
+        &-line{
+            width:100%;
+            height: 4px;
+            background-color: $color-praimary;
+            transition: all .5s .5s;
+            transform-origin: right;
+        }
+
+    }
+}
+
+.sub-name{
+    font-family: $font-sahel;
+    font-size: 18px;
+    color: $color-secondry;
+    text-align: center;
+    margin-top: 15px;
+    @include textStyles;
+}
+
+.main-heading{
+    font-family: $font-nastaliq;
+    font-size: 100px;
+    font-weight: 300;
+    color: $color-praimary;
+    margin-bottom: 40px;
+    margin-top: 90px;
+}
+
+.sub-heading{
+    font-family: $font-sahel;
+    font-size: 60px;
+    font-weight: 300;
+    color: $color-secondry;
+    margin-bottom: 50px;
+}
+
+.main-btn{
+    width: 170px;
+    height: 45px;
+    font-family: $font-sahel;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-praimary;
+    background-color: transparent;
+    border: 1px solid $color-praimary;
+    cursor: pointer;
+    transition: all .4s ;
+    position: relative;
+    bottom: 20px;
+    
+    &:hover{
+        background-color: $color-praimary;
+        color: $color-dark;
+        border-radius: 10px;
+    }
+}
+
+.card{
+    width: 33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+
+    &:hover .card-overlay{
+        top: 0;
+        
+    }
+    &-overlay{
+        @extend %fullspace;
+        @include flexlayout;
+        flex-direction: column;
+        position: absolute;
+        top: -100%;
+        left: 0%;
+        color: $color-white;
+        background-color: rgba($color-praimary,.3);
+        z-index: 10;
+        transition: all .5s;
+        box-sizing: border-box;
+
+        &-heading{
+            font-family: $font-nastaliq;
+            font-size: 50px;
+            @include textStyles;
+        }
+        &-paragraph{
+            font-family: $font-sahel;
+            font-size: 20px;
+            margin-bottom: 25px;
+            @include textStyles;
+        }
+        &-btn{
+            width: 150px;
+            height: 40px;
+            color: $color-praimary;
+            background-color: $color-white;
+            font-family: $font-sahel;
+            font-size: 14px;
+            border: 1px solid $color-praimary;
+            outline: none;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover{
+                border-radius: 0px 20px 0px 20px;
+            }
+        }
+    }
+
+    &-img{
+        @extend %fullspace;
+        object-fit: cover;
+        opacity: .7;
+    }
+}
